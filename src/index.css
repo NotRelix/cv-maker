@@ -1,5 +1,7 @@
 :root {
   --navbar-logo: rgb(243, 243, 255);
+  --muted-text: rgb(100, 100, 100); 
+  --border: rgb(180, 180, 180);
 }
 
 * {

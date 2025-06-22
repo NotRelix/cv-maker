@@ -5,4 +5,5 @@
 
 .container__main {
   display: flex;
+  padding: 24px 48px;
 }

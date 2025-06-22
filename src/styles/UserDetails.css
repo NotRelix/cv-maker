@@ -1,4 +1,42 @@
 .user-details {
   flex: 3;
-  padding: 24px 48px;
+  max-width: 800px;
+}
+
+.user-details__container {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  padding: 24px;
+}
+
+.user-details__field {
+  display: inline-grid;
+  gap: 4px;
+}
+
+.user-details form {
+  display: grid;
+  gap: 8px 16px;
+}
+
+.user-details form div:last-child {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.user-details input {
+  border: 1px solid var(--border);
+  padding: 8px;
+}
+
+.user-details label {
+  color: var(--muted-text);
+}
+
+@media (max-width: 868px) {
+  .user-details form div:last-child {
+    grid-column: 1 / 1;
+  }
 }
