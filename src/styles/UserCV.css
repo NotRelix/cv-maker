@@ -1,4 +1,16 @@
 .user-cv {
+  display: flex;
+  justify-content: center;
   flex: 2;
-  padding: 24px;
+  padding: 48px;
+  height: 100%;
+  background-color: var(--cv-bg);
+  border: 1px solid var(--border);
+}
+
+.user-cv__container {
+  background-color: var(--paper-bg);
+  height: 100%;
+  aspect-ratio: 8.5 / 11;
+  padding: 8px;
 }

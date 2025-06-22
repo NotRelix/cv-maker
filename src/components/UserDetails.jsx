@@ -4,7 +4,7 @@ const UserDetails = ({ userInfo, onChange }) => {
   return (
     <article className='user-details'>
       <div className="user-details__container">
-        <h1>User Details</h1>
+        <h1 className='user-details__header'>Basic Info</h1>
         <form action="">
           <div className='user-details__field'>
             <label htmlFor="first-name">First Name</label>
