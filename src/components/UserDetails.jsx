@@ -40,6 +40,7 @@ const UserDetails = ({ userInfo, onChange }) => {
               type="text"
               id='summary'
               name='summary'
+              rows="2"
               onChange={(e) => onChange(e, "summary")}
             />
           </div>
@@ -49,4 +50,4 @@ const UserDetails = ({ userInfo, onChange }) => {
   )
 }
 
-export default UserDetails
+export default UserDetails;

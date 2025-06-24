@@ -17,13 +17,18 @@
 }
 
 .user-cv__heading {
-  font-size: calc(2vw - 1.4px);
+  font-size: calc(1.6vw - 1.4px);
+  font-weight: 500;
+  color: var(--cv-heading);
 }
 
 .user-cv__professional-title {
-  font-size: calc(1.7vw - 1.4px);
+  font-size: calc(1.4vw - 1.4px);
+  color: var(--cv-heading);
 }
 
 .user-cv__summary {
-  font-size: calc(1.5vw - 1.4px);
+  font-size: calc(0.8vw - 1.4px);
+  margin-top: 6px;
+  font-weight: 300;
 }

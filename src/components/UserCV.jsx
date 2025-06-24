@@ -14,4 +14,4 @@ const UserCV = ({ userInfo }) => {
   )
 }
 
-export default UserCV
+export default UserCV;
