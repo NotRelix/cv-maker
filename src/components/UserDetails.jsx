@@ -26,30 +26,21 @@ const UserDetails = ({ userInfo, onChange }) => {
             />
           </div>
           <div className='user-details__field'>
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id='email'
-              name='email'
-              onChange={(e) => onChange(e, "email")}
-            />
-          </div>
-          <div className='user-details__field'>
-            <label htmlFor="phone-number">Phone Number</label>
-            <input
-              type="number"
-              id='phone-number'
-              name='phone-number'
-              onChange={(e) => onChange(e, "phoneNumber")}
-            />
-          </div>
-          <div className='user-details__field'>
-            <label htmlFor="address">Address</label>
+            <label htmlFor="professional-title">Professional Title</label>
             <input
               type="text"
-              id='address'
-              name='address'
-              onChange={(e) => onChange(e, "address")}
+              id='professional-title'
+              name='professional-title'
+              onChange={(e) => onChange(e, "professionalTitle")}
+            />
+          </div>
+          <div className='user-details__field'>
+            <label htmlFor="summary">Summary</label>
+            <textarea
+              type="text"
+              id='summary'
+              name='summary'
+              onChange={(e) => onChange(e, "summary")}
             />
           </div>
         </form>

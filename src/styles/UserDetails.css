@@ -1,6 +1,6 @@
 .user-details {
   flex: 3;
-  max-width: 800px;
+  max-width: 720px;
 }
 
 .user-details__container {
@@ -8,7 +8,7 @@
   gap: 16px;
   flex-direction: column;
   border: 1px solid var(--border);
-  border-right: none;
+  border-radius: 4px;
   padding: 24px;
   padding-bottom: 32px;
 }
@@ -41,7 +41,7 @@
   color: var(--muted-text);
 }
 
-@media (max-width: 868px) {
+@media (max-width: 1280px) {
   .user-details form div:last-child {
     grid-column: 1 / 1;
   }
