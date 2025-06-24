@@ -11,6 +11,19 @@
   aspect-ratio: 8.5 / 11;
   width: 35vw;
   max-width: 35vw;
-  padding: 16px;
+  padding: calc(1.5vw - 1.4px);
   word-wrap: break-word;
+  font-size: 2rem;
+}
+
+.user-cv__heading {
+  font-size: calc(2vw - 1.4px);
+}
+
+.user-cv__professional-title {
+  font-size: calc(1.7vw - 1.4px);
+}
+
+.user-cv__summary {
+  font-size: calc(1.5vw - 1.4px);
 }

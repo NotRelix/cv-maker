@@ -15,8 +15,8 @@
 
 textarea {
   resize: vertical;
-  min-height: 1.5em;
-  max-height: 11em;
+  min-height: 2.5rem;
+  max-height: 8.5rem;
 }
 
 input,
