@@ -1,0 +1,34 @@
+.select-edit {
+  display: flex;
+  width: fit-content;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.select-edit__icon {
+  display: flex;
+  background-color: white;
+  border: none;
+  padding: 8px;
+}
+
+.select-edit__icon:hover {
+  background-color: var(--hover);
+}
+
+.select-edit__icon svg {
+  stroke: gray;
+}
+
+.select-edit__icon-selected {
+  background-color: var(--selected-option);
+}
+
+.select-edit__icon-selected:hover {
+  background-color: var(--hover-selected);
+}
+
+.select-edit__icon-selected svg {
+  stroke: white;
+}

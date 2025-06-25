@@ -1,8 +1,10 @@
 import '../styles/UserDetails.css';
+import SelectEdit from './SelectEdit';
 
 const UserDetails = ({ userInfo, onChange }) => {
   return (
     <article className='user-details'>
+      <SelectEdit />
       <div className="user-details__container">
         <h1 className='user-details__header'>Basic Info</h1>
         <form action="">
