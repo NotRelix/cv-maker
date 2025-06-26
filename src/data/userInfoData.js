@@ -3,4 +3,8 @@ export const userInfoData = {
   lastName: "",
   professionalTitle: "",
   summary: "",
+  email: "",
+  phoneNumber: "",
+  location: "",
+  website: "",
 }

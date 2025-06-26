@@ -21,7 +21,8 @@
   font-weight: 600;
 }
 
-.user-details__field {
+.user-details__field,
+.contact-info__field {
   display: inline-grid;
   gap: 4px;
 }
@@ -29,11 +30,6 @@
 .user-details form {
   display: grid;
   gap: 8px 16px;
-}
-
-.user-details form div:last-child {
-  grid-column-start: 1;
-  grid-column-end: 3;
 }
 
 .user-details input {

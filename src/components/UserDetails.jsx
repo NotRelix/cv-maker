@@ -2,6 +2,7 @@ import { useState } from 'react';
 import '../styles/UserDetails.css';
 import SelectEdit from './SelectEdit';
 import BasicInfoForm from './BasicInfoForm';
+import ContactInfoForm from './ContactInfoForm';
 
 const UserDetails = ({ userInfo, onChange }) => {
   const [currentTab, setCurrentTab] = useState(0);
@@ -14,7 +15,7 @@ const UserDetails = ({ userInfo, onChange }) => {
     {
       id: 1,
       title: "Contact Info",
-      form: <h1>Contact Info</h1>
+      form: <ContactInfoForm userInfo={userInfo} onChange={onChange} />
     },
     {
       id: 2,
