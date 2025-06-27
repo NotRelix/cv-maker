@@ -41,7 +41,7 @@ const ContactInfo = ({ userInfo }) => {
       {contacts.map(contact => {
         if (userInfo[contact.name]) {
           return (
-            <div className="contact-info__container">
+            <div className="contact-info__container" key={contact.id}>
               {contact.svg}
               {contact.value}
             </div>
