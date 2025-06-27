@@ -1,19 +1,20 @@
 .user-cv__contact-info {
-  max-width: calc(12vw - 1.4px);
+  max-width: 175px;
+  min-width: 175px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: calc(1vw - 1.4px);
+  gap: 8px;
 }
 
 .contact-info__container {
   display: flex;
-  gap: calc(0.8vw - 1.4px);
+  gap: 4px;
   align-items: center;
 }
 
 .contact-info__container svg {
-  width: calc(1.2vw - 1.4px);
+  width: 12px;
   flex-shrink: 0;
 }
 
@@ -21,5 +22,5 @@
 .contact-info__phone-number,
 .contact-info__location,
 .contact-info__website {
-  font-size: calc(0.8vw - 1.4px);
+  font-size: 10px;
 }

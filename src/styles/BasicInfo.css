@@ -3,18 +3,18 @@
 }
 
 .basic-info__heading {
-  font-size: calc(1.6vw - 1.4px);
+  font-size: 24px;
   font-weight: 500;
   color: var(--cv-heading);
 }
 
 .basic-info__professional-title {
-  font-size: calc(1.4vw - 1.4px);
+  font-size: 20px;
   color: var(--cv-heading);
 }
 
 .basic-info__summary {
-  font-size: calc(0.8vw - 1.4px);
+  font-size: 10px;
   margin-top: 6px;
   font-weight: 300;
 }
