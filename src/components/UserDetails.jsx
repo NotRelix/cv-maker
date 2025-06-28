@@ -3,6 +3,7 @@ import '../styles/UserDetails.css';
 import SelectEdit from './SelectEdit';
 import BasicInfoForm from './BasicInfoForm';
 import ContactInfoForm from './ContactInfoForm';
+import EducationForm from './EducationForm';
 
 const UserDetails = ({ userInfo, onChange }) => {
   const [currentTab, setCurrentTab] = useState(0);
@@ -20,7 +21,7 @@ const UserDetails = ({ userInfo, onChange }) => {
     {
       id: 2,
       title: "Education",
-      form: <h1>Education</h1>
+      form: <EducationForm userInfo={userInfo} onChange={onChange} />
     },
     {
       id: 3,

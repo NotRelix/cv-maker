@@ -7,4 +7,8 @@ export const userInfoData = {
   phoneNumber: "",
   location: "",
   website: "",
+  university: "",
+  course: "",
+  startingYear: "",
+  graduatingYear: "",
 }
