@@ -8,6 +8,18 @@
   overflow-y: auto;
   word-break: break-all;
   transform-origin: top;
+  margin: 0 auto;
+  z-index: 1000;
+}
+
+.user-cv__backdrop {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 999;
 }
 
 .user-cv__top-section {
@@ -21,6 +33,10 @@
     top: 24px;
     left: 50%;
     transform: translateX(-50%);
+
+    .user-cv__container::backdrop {
+      background-color: gray;
+    }
   }
   
   .user-cv-hidden {

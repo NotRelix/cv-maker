@@ -30,6 +30,7 @@ textarea {
 .eye-icon {
   display: none;
   border: 1px solid var(--border);
+  z-index: 1000;
 }
 
 .eye-icon svg {
