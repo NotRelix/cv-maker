@@ -4,14 +4,12 @@ import ContactInfo from './ContactInfo';
 
 const UserCV = ({ userInfo, toggleCV }) => {
   return (
-    <article className={`user-cv ${toggleCV === false ? "user-cv-hidden" : ""}`}>
-      <section className='user-cv__container'>
-        <section className="user-cv__top-section">
-          <BasicInfo userInfo={userInfo} />
-          <ContactInfo userInfo={userInfo} />
-        </section>
+    <section className={`user-cv__container ${toggleCV === false ? "user-cv-hidden" : ""}`}>
+      <section className="user-cv__top-section">
+        <BasicInfo userInfo={userInfo} />
+        <ContactInfo userInfo={userInfo} />
       </section>
-    </article>
+    </section>
   )
 }
 

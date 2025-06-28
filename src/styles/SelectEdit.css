@@ -4,6 +4,7 @@
   border: 1px solid var(--border);
   border-radius: 4px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .select-edit__icon {

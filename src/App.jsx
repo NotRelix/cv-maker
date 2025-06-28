@@ -7,7 +7,7 @@ import { userInfoData } from './data/userInfoData'
 
 function App() {
   const [userInfo, setUserInfo] = useState(userInfoData);
-  const [toggleCV, setToggleCV] = useState(true);
+  const [toggleCV, setToggleCV] = useState(false);
 
   function onChange(e, key) {
     setUserInfo({ ...userInfo, [key]: e.target.value })
