@@ -15,6 +15,7 @@
   padding: 16px;
   padding-bottom: 32px;
   max-width: 700px;
+  overflow-y: scroll;
 }
 
 .user-details__header {
@@ -22,7 +23,8 @@
 }
 
 .user-details__field,
-.contact-info__field {
+.contact-info__field,
+.education__field {
   display: inline-grid;
   gap: 4px;
 }
@@ -39,10 +41,4 @@
 
 .user-details label {
   color: var(--muted-text);
-}
-
-@media (max-width: 1280px) {
-  .user-details form div:last-child {
-    grid-column: 1 / 1;
-  }
 }

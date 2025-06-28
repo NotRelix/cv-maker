@@ -1,0 +1,49 @@
+.user-details__education {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.education__field {
+  position: relative;
+  grid-column: 1 / -1;
+}
+
+.education__field:nth-child(3) {
+  grid-column: 1;
+}
+
+.education__field:nth-child(4) {
+  grid-column: 2;
+}
+
+.additional-info {
+  display: flex;
+  gap: 16px;
+}
+
+.additional-info__container {
+  background-color: var(--selected-option);
+  padding: 8px;
+  border-radius: 4px;
+  color: white;
+}
+
+.additional-info__add {
+  position: relative;
+  background-color: none;
+  border: none;
+}
+
+.additional-info__add svg {
+  stroke: white;
+  fill: var(--add-btn);
+  position: absolute;
+  bottom: 7px;
+  right: 4px;
+}
+
+@media (max-width: 450px) {
+  .education__field:nth-child(3),
+  .education__field:nth-child(4) {
+    grid-column: 1 / -1;
+  }
+}

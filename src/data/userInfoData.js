@@ -11,4 +11,6 @@ export const userInfoData = {
   course: "",
   startingYear: "",
   graduatingYear: "",
+  additionalInfo: "",
+  additionalInfoList: [],
 }
