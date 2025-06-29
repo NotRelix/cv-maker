@@ -21,7 +21,7 @@ function App() {
     <div className='container'>
       <Navbar />
       <main className='container__main'>
-        <UserDetails userInfo={userInfo} onChange={onChange} />
+        <UserDetails userInfo={userInfo} onChange={onChange} setUserInfo={setUserInfo} />
         <UserCV userInfo={userInfo} toggleCV={toggleCV} />
       </main>
       <div className='eye-icon' onClick={handleToggleCV}>

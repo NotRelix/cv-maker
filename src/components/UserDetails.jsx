@@ -5,7 +5,7 @@ import BasicInfoForm from './BasicInfoForm';
 import ContactInfoForm from './ContactInfoForm';
 import EducationForm from './EducationForm';
 
-const UserDetails = ({ userInfo, onChange }) => {
+const UserDetails = ({ userInfo, onChange, setUserInfo }) => {
   const [currentTab, setCurrentTab] = useState(0);
   const forms = [
     {
@@ -21,7 +21,7 @@ const UserDetails = ({ userInfo, onChange }) => {
     {
       id: 2,
       title: "Education",
-      form: <EducationForm userInfo={userInfo} onChange={onChange} />
+      form: <EducationForm userInfo={userInfo} onChange={onChange} setUserInfo={setUserInfo} />
     },
     {
       id: 3,

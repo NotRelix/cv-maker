@@ -2,13 +2,21 @@ import { useState } from 'react';
 import '../styles/EducationForm.css';
 import SwitchSlider from './SwitchSlider';
 
-const EducationForm = ({ userInfo, onChange }) => {
-  const [additionalList, setAdditionalList] = useState([]);
+const EducationForm = ({ userInfo, onChange, setUserInfo }) => {
+  const [additionalList, setAdditionalList] = useState([...userInfo.currentAdditionalInfoList]);
 
   function handleAddAdditional(e) {
     e.preventDefault();
-    setAdditionalList([...additionalList, userInfo.additionalInfo]);
+    const newList = [...additionalList, userInfo.additionalInfo];
+    setAdditionalList(newList);
     userInfo.additionalInfo = "";
+    userInfo.currentAdditionalInfoList = newList;
+  }
+
+  function handleDelete(index) {
+    const newList = additionalList.filter((item, key) => key !== index);
+    setAdditionalList(newList);
+    userInfo.currentAdditionalInfoList = newList;
   }
 
   return (
@@ -55,7 +63,7 @@ const EducationForm = ({ userInfo, onChange }) => {
       </div>
       <div className='education__field'>
         <label htmlFor="on-going">On-going</label>
-        <SwitchSlider />
+        <SwitchSlider userInfo={userInfo} setUserInfo={setUserInfo} name={"onGoing"} />
       </div>
       <div className='education__field'>
         <label htmlFor="gpa">GPA (optional)</label>
@@ -83,10 +91,15 @@ const EducationForm = ({ userInfo, onChange }) => {
         </button>
       </div>
       <div className='education__field additional-info'>
-        {additionalList.map((additional) => {
+        {additionalList.map((additional, index) => {
           return (
-            <div className='additional-info__container'>
-              {additional}
+            <div key={index} className='additional-info__container'>
+              <p>
+                {additional}  
+              </p>
+              <svg onClick={() => handleDelete(index)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="delete-btn size-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 12H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+              </svg>
             </div>
           )
         })}

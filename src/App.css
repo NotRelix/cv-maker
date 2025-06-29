@@ -39,6 +39,14 @@ textarea {
   stroke: white;
 }
 
+.delete-btn {
+  position: absolute;
+  background: transparent;
+  top: -8px;
+  right: -12px;
+  fill: var(--delete-btn);
+}
+
 .submit-btn {
   justify-self: flex-end;
   padding: 8px 24px;

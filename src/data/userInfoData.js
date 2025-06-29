@@ -7,10 +7,13 @@ export const userInfoData = {
   phoneNumber: "",
   location: "",
   website: "",
+  educationList: [],
   university: "",
   course: "",
   startingYear: "",
   graduatingYear: "",
+  onGoing: false,
   additionalInfo: "",
+  currentAdditionalInfoList: [],
   additionalInfoList: [],
 }

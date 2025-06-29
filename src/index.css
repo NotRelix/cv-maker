@@ -9,6 +9,7 @@
   --hover: rgb(241, 241, 241);
   --hover-selected: rgb(128, 128, 240);
   --add-btn: rgb(92, 172, 92);
+  --delete-btn: rgb(255, 52, 52);
 }
 
 * {

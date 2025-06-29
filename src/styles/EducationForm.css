@@ -12,15 +12,22 @@
 }
 
 .education__field:nth-child(4) {
+  grid-column: 1;
+}
+
+.education__field:nth-child(5) {
   grid-column: 2;
 }
 
 .additional-info {
   display: flex;
   gap: 16px;
+  max-width: 100%;
+  flex-wrap: wrap;
 }
 
 .additional-info__container {
+  position: relative;
   background-color: var(--selected-option);
   padding: 8px;
   border-radius: 4px;

@@ -1,9 +1,13 @@
 import '../styles/SwitchSlider.css';
 
-const SwitchSlider = () => {
+const SwitchSlider = ({ userInfo, setUserInfo, name }) => {
+  function handleSwitch(e) {
+    setUserInfo({...userInfo, [name]: e.target.checked});
+  }
+
   return (
     <label className="switch">
-      <input type="checkbox" />
+      <input checked={userInfo[name]} onChange={handleSwitch} type="checkbox" />
       <span className="slider slider-round"></span>
     </label>
   )
