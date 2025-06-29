@@ -22,6 +22,7 @@ const EducationForm = ({ userInfo, onChange, setUserInfo }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
+    setAdditionalList([]);
     setUserInfo(prev => ({
       ...prev,
       university: '',
@@ -29,6 +30,7 @@ const EducationForm = ({ userInfo, onChange, setUserInfo }) => {
       startingYear: '',
       graduatingYear: '',
       onGoing: '',
+      gpa: '',
       additionalInfo: '',
       currentAdditionalInfoList: '',
       educationList: [
@@ -39,6 +41,7 @@ const EducationForm = ({ userInfo, onChange, setUserInfo }) => {
           startingYear: prev.startingYear,
           graduatingYear: prev.onGoing ? "Present" : prev.graduatingYear,
           onGoing: prev.onGoing,
+          gpa: prev.gpa,
           additionalInfo: [...prev.currentAdditionalInfoList],
         }
       ]
@@ -48,7 +51,7 @@ const EducationForm = ({ userInfo, onChange, setUserInfo }) => {
   return (
     <form onSubmit={handleSubmit} className="user-details__education" action="">
       <div className='education__field'>
-        <label htmlFor="university">University</label>
+        <label htmlFor="university">School*</label>
         <input
           type="text"
           id='university'
@@ -66,11 +69,10 @@ const EducationForm = ({ userInfo, onChange, setUserInfo }) => {
           name='course'
           value={userInfo.course}
           onChange={(e) => onChange(e, "course")}
-          required
         />
       </div>
       <div className='education__field'>
-        <label htmlFor="starting-year">Starting Year</label>
+        <label htmlFor="starting-year">Starting Year*</label>
         <input
           type="number"
           id='starting-year'
@@ -81,7 +83,7 @@ const EducationForm = ({ userInfo, onChange, setUserInfo }) => {
         />
       </div>
       <div className='education__field'>
-        <label htmlFor="graduating-year">Graduating Year</label>
+        <label htmlFor="graduating-year">Graduating Year*</label>
         <input
           type="number"
           id='graduating-year'
@@ -97,7 +99,7 @@ const EducationForm = ({ userInfo, onChange, setUserInfo }) => {
         <SwitchSlider userInfo={userInfo} setUserInfo={setUserInfo} name={"onGoing"} />
       </div>
       <div className='education__field'>
-        <label htmlFor="gpa">GPA (optional)</label>
+        <label htmlFor="gpa">GPA</label>
         <input
           type="number"
           id='gpa'

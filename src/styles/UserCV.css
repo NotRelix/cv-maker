@@ -26,6 +26,7 @@
 .user-cv__top-section {
   display: flex;
   gap: 16px;
+  margin-bottom: 16px;
 }
 
 @media (max-width: 1000px) {

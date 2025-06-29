@@ -13,6 +13,7 @@ export const userInfoData = {
   startingYear: "",
   graduatingYear: "",
   onGoing: false,
+  gpa: "",
   additionalInfo: "",
   currentAdditionalInfoList: [],
   additionalInfoList: [],

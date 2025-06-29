@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import '../styles/UserCV.css';
 import BasicInfo from './BasicInfo';
 import ContactInfo from './ContactInfo';
+import Education from './Education';
 
 const UserCV = ({ userInfo, toggleCV }) => {
   const [isMobile, setIsMobile] = useState(window.matchMedia('(max-width: 1000px)').matches);
@@ -31,15 +32,8 @@ const UserCV = ({ userInfo, toggleCV }) => {
           <BasicInfo userInfo={userInfo} />
           <ContactInfo userInfo={userInfo} />
         </section>
-        <section>
-          {userInfo.educationList.map((education) => (
-            <div>
-              <p>{education.university}</p>
-              <p>{education.course}</p>
-              <p>{education.startingYear}</p>
-              <p>{education.graduatingYear}</p>
-            </div>
-          ))}
+        <section className='user-cv__middle-section'>
+          <Education userInfo={userInfo} />
         </section>
       </section>
     </>

@@ -28,6 +28,13 @@ textarea {
   padding: 8px;
 }
 
+hr {
+  border: 0;
+  border-top: 1px solid var(--cv-heading);
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
 .eye-icon {
   display: none;
   border: 1px solid var(--border);
@@ -52,6 +59,7 @@ textarea {
   padding: 8px 24px;
   background-color: white;
   border: 1px solid var(--border);
+  color: var(--muted-text);
   border-radius: 4px;
   margin-top: 16px;
   max-width: fit-content;
