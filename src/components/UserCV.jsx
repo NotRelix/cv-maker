@@ -31,6 +31,16 @@ const UserCV = ({ userInfo, toggleCV }) => {
           <BasicInfo userInfo={userInfo} />
           <ContactInfo userInfo={userInfo} />
         </section>
+        <section>
+          {userInfo.educationList.map((education) => (
+            <div>
+              <p>{education.university}</p>
+              <p>{education.course}</p>
+              <p>{education.startingYear}</p>
+              <p>{education.graduatingYear}</p>
+            </div>
+          ))}
+        </section>
       </section>
     </>
   )

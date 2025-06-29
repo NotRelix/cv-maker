@@ -19,8 +19,33 @@ const EducationForm = ({ userInfo, onChange, setUserInfo }) => {
     userInfo.currentAdditionalInfoList = newList;
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    setUserInfo(prev => ({
+      ...prev,
+      university: '',
+      course: '',
+      startingYear: '',
+      graduatingYear: '',
+      onGoing: '',
+      additionalInfo: '',
+      currentAdditionalInfoList: '',
+      educationList: [
+        ...prev.educationList,
+        {
+          university: prev.university,
+          course: prev.course,
+          startingYear: prev.startingYear,
+          graduatingYear: prev.graduatingYear,
+          onGoing: prev.onGoing,
+          additionalInfo: [...prev.currentAdditionalInfoList],
+        }
+      ]
+    }))
+  }
+
   return (
-    <form className="user-details__education" action="">
+    <form onSubmit={handleSubmit} className="user-details__education" action="">
       <div className='education__field'>
         <label htmlFor="university">University</label>
         <input
@@ -29,6 +54,7 @@ const EducationForm = ({ userInfo, onChange, setUserInfo }) => {
           name='university'
           value={userInfo.university}
           onChange={(e) => onChange(e, "university")}
+          required
         />
       </div>
       <div className='education__field'>
@@ -39,6 +65,7 @@ const EducationForm = ({ userInfo, onChange, setUserInfo }) => {
           name='course'
           value={userInfo.course}
           onChange={(e) => onChange(e, "course")}
+          required
         />
       </div>
       <div className='education__field'>
@@ -49,6 +76,7 @@ const EducationForm = ({ userInfo, onChange, setUserInfo }) => {
           name='starting-year'
           value={userInfo.startingYear}
           onChange={(e) => onChange(e, "startingYear")}
+          required
         />
       </div>
       <div className='education__field'>
@@ -59,6 +87,7 @@ const EducationForm = ({ userInfo, onChange, setUserInfo }) => {
           name='graduating-year'
           value={userInfo.graduatingYear}
           onChange={(e) => onChange(e, "graduatingYear")}
+          required
         />
       </div>
       <div className='education__field'>
@@ -104,7 +133,7 @@ const EducationForm = ({ userInfo, onChange, setUserInfo }) => {
           )
         })}
       </div>
-      <button className='submit-btn'>Submit Education</button>
+      <button type='submit' className='submit-btn'>Submit Education</button>
     </form>
   )
 }

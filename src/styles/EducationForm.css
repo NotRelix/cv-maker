@@ -50,7 +50,8 @@
 
 @media (max-width: 450px) {
   .education__field:nth-child(3),
-  .education__field:nth-child(4) {
+  .education__field:nth-child(4),
+  .education__field:nth-child(5) {
     grid-column: 1 / -1;
   }
 }
