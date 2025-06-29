@@ -4,6 +4,7 @@ import SwitchSlider from './SwitchSlider';
 
 const EducationForm = ({ userInfo, onChange, setUserInfo }) => {
   const [additionalList, setAdditionalList] = useState([...userInfo.currentAdditionalInfoList]);
+  const currentYear = new Date().getFullYear();
 
   function handleAddAdditional(e) {
     e.preventDefault();
@@ -36,7 +37,7 @@ const EducationForm = ({ userInfo, onChange, setUserInfo }) => {
           university: prev.university,
           course: prev.course,
           startingYear: prev.startingYear,
-          graduatingYear: prev.graduatingYear,
+          graduatingYear: prev.onGoing ? "Present" : prev.graduatingYear,
           onGoing: prev.onGoing,
           additionalInfo: [...prev.currentAdditionalInfoList],
         }
@@ -85,8 +86,9 @@ const EducationForm = ({ userInfo, onChange, setUserInfo }) => {
           type="number"
           id='graduating-year'
           name='graduating-year'
-          value={userInfo.graduatingYear}
+          value={userInfo.onGoing ? currentYear : userInfo.graduatingYear}
           onChange={(e) => onChange(e, "graduatingYear")}
+          disabled={userInfo.onGoing}
           required
         />
       </div>
