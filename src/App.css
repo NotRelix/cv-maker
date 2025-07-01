@@ -72,6 +72,15 @@ hr {
 }
 
 @media (max-width: 1000px) {
+  .container__main {
+    justify-content: center;
+  }
+
+  .submit-btn {
+    justify-self: start;
+    grid-column: 1 / 3;
+  }
+
   .eye-icon {
     display: flex;
     position: absolute;
@@ -81,5 +90,11 @@ hr {
     background-color: var(--selected-option);
     padding: 8px;
     border-radius: 20px;
+  }
+}
+
+@media (max-width: 580px) {
+  .container__main {
+    padding: 16px;
   }
 }

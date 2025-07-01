@@ -22,7 +22,6 @@ const EducationForm = ({ userInfo, onChange, setUserInfo }) => {
 
   function handleEdit(index) {
     const editedEducation = { ...userInfo.educationList[index] };
-    console.log(editedEducation);
     setUserInfo(prev => ({
       ...prev,
       university: editedEducation.university,
