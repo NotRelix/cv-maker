@@ -7,8 +7,8 @@ const Education = ({ userInfo }) => {
       <h1 className="education__title">Education Background</h1>
       <hr />
       <div className="education__list">
-        {userInfo.educationList.map((education) => (
-          <div className="education__container">
+        {userInfo.educationList.map((education, index) => (
+          <div className="education__container" key={index}>
             <div className="education__top-container">
               <div className="education__school">
                 <h1 className="education__university">{education.university}</h1>

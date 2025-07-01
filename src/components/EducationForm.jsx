@@ -20,6 +20,23 @@ const EducationForm = ({ userInfo, onChange, setUserInfo }) => {
     userInfo.currentAdditionalInfoList = newList;
   }
 
+  function handleEdit(index) {
+    const editedEducation = { ...userInfo.educationList[index] };
+    console.log(editedEducation);
+    setUserInfo(prev => ({
+      ...prev,
+      university: editedEducation.university,
+      course: editedEducation.course,
+      startingYear: editedEducation.startingYear,
+      graduatingYear: editedEducation.graduatingYear,
+      onGoing: editedEducation.onGoing,
+      gpa: editedEducation.gpa,
+      currentAdditionalInfoList: [...editedEducation.additionalInfo],
+      educationList: userInfo.educationList.filter((_, key) => key !== index),
+    }));
+    setAdditionalList(editedEducation.additionalInfo);
+  }
+
   function handleDeleteEducation(index) {
     const newList = userInfo.educationList.filter((item, key) => key !== index);
     setUserInfo({
@@ -59,12 +76,12 @@ const EducationForm = ({ userInfo, onChange, setUserInfo }) => {
   return (
     <div className='user-details__education-container'>
       {userInfo.educationList.map((education, index) => (
-        <div className='user-details__education-list'>
+        <div className='user-details__education-list' key={index}>
           <div className='user-details__heading'>
             <p className='user-details__university'>{education.university} <span className='user-details__course'>/ {education.course}</span></p>
           </div>
           <div className='user-details__icons'>
-            <button className='user-details__edit'>
+            <button className='user-details__edit' onClick={() => handleEdit(index)}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
               </svg>
