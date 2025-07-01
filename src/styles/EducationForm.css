@@ -1,3 +1,63 @@
+.user-details__education-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  margin-bottom: 16px;
+  padding-left: 8px;
+}
+
+.user-details__heading {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 40px;
+}
+
+.user-details__university {
+  max-width: 100%;
+  width: 100%;
+  flex: 1 1 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 4px;
+}
+
+.user-details__course {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 200;
+}
+
+.user-details__icons {
+  display: flex;
+}
+
+.user-details__edit,
+.user-details__delete {
+  display: inline-flex;
+  background: transparent;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.user-details__edit,
+.user-details__delete {
+  box-sizing: content-box;
+  width: 18px;
+}
+
 .user-details__education {
   grid-template-columns: repeat(2, 1fr);
 }
