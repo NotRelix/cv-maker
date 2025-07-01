@@ -6,6 +6,7 @@
   border-radius: 4px;
   margin-bottom: 16px;
   padding-left: 8px;
+  overflow: hidden;
 }
 
 .user-details__heading {
@@ -50,6 +51,11 @@
   align-items: center;
   justify-content: center;
   padding: 8px;
+}
+
+.user-details__edit:hover,
+.user-details__delete:hover {
+  background-color: var(--hover);
 }
 
 .user-details__edit,
