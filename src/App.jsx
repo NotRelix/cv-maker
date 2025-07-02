@@ -1,13 +1,16 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import UserCV from './components/UserCV'
 import UserDetails from './components/UserDetails'
 import { userInfoData } from './data/userInfoData'
+import html2pdf from 'html2pdf.js'
 
 function App() {
   const [userInfo, setUserInfo] = useState(userInfoData);
   const [toggleCV, setToggleCV] = useState(false);
+
+  const cvRef = useRef();
 
   function onChange(e, key) {
     setUserInfo({ ...userInfo, [key]: e.target.value })
@@ -17,12 +20,26 @@ function App() {
     setToggleCV(!toggleCV);
   }
 
+  function onClickDownload() {
+    const element = cvRef.current;
+    if (!element) return;
+
+    const options = {
+      filename: "my-cv.pdf",
+      image: { type: "pdf", quality: 1 },
+      html2canvas: { scale: 3 },
+      jsPDF: { unit: 'px', format: [510, 660], orientation: 'portrait' }
+    };
+
+    html2pdf().set(options).from(cvRef.current).save();
+  }
+
   return (
     <div className='container'>
-      <Navbar />
+      <Navbar onClickDownload={onClickDownload} />
       <main className='container__main'>
         <UserDetails userInfo={userInfo} onChange={onChange} setUserInfo={setUserInfo} />
-        <UserCV userInfo={userInfo} toggleCV={toggleCV} />
+        <UserCV ref={cvRef} userInfo={userInfo} toggleCV={toggleCV} />
       </main>
       <div className='eye-icon' onClick={handleToggleCV}>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
