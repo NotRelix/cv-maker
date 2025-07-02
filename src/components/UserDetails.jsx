@@ -4,6 +4,7 @@ import SelectEdit from './SelectEdit';
 import BasicInfoForm from './BasicInfoForm';
 import ContactInfoForm from './ContactInfoForm';
 import EducationForm from './EducationForm';
+import WorkForm from './WorkForm';
 
 const UserDetails = ({ userInfo, onChange, setUserInfo }) => {
   const [currentTab, setCurrentTab] = useState(0);
@@ -26,7 +27,7 @@ const UserDetails = ({ userInfo, onChange, setUserInfo }) => {
     {
       id: 3,
       title: "Work Experience",
-      form: <h1>Work Experience</h1>
+      form: <WorkForm userInfo={userInfo} onChange={onChange} setUserInfo={setUserInfo} />
     },
   ]
 

@@ -17,4 +17,14 @@ export const userInfoData = {
   additionalInfo: "",
   currentAdditionalInfoList: [],
   additionalInfoList: [],
+
+  workList: [],
+  position: "",
+  workplace: "",
+  startingWorkYear: "",
+  endWorkYear: "",
+  onGoingWork: false,
+  additionalWorkInfo: "",
+  currentAdditionalWorkInfoList: [],
+  additionalWorkInfoList: [],
 }
