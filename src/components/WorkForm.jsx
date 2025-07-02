@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import '../styles/EducationForm.css';
-import '../styles/WorkForm.css';
 import SwitchSlider from './SwitchSlider';
 
 const WorkForm = ({ userInfo, onChange, setUserInfo }) => {

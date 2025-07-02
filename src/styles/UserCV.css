@@ -29,6 +29,12 @@
   margin-bottom: 16px;
 }
 
+.user-cv__middle-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 @media (max-width: 1000px) {
   .user-cv__container {
     position: absolute;
