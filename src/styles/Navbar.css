@@ -1,7 +1,26 @@
 .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 8px 48px;
   background: #bfbfff;
   background: linear-gradient(90deg,rgb(135, 135, 255) 0%, rgb(201, 134, 255) 100%);
+}
+
+.navbar__options {
+  display: flex;
+  border: 1px solid var(--navbar-border);
+  padding: 4px;
+  border-radius: 4px;
+  background-color: var(--navbar-icon);
+}
+
+.navbar__options:hover {
+  background-color: var(--navbar-icon-hover);
+}
+
+.navbar__options svg {
+  stroke: white;
 }
 
 .navbar__logo {

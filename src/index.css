@@ -1,5 +1,8 @@
 :root {
   --navbar-logo: rgb(243, 243, 255);
+  --navbar-icon: rgb(209, 152, 255);
+  --navbar-icon-hover: rgb(215, 167, 255);
+  --navbar-border: rgb(218, 173, 255);;
   --muted-text: rgb(100, 100, 100); 
   --border: rgb(180, 180, 180);
   --cv-bg: rgb(231, 231, 231);
