@@ -1,12 +1,41 @@
-# React + Vite
+# CV Maker
+Create your CV with Ease
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Preview
+<img width="1343" alt="Screenshot 2025-07-03 at 10 16 02 PM" src="https://github.com/user-attachments/assets/946ecc94-0e76-4947-b048-92f2427d7f77" />
 
-Currently, two official plugins are available:
+## Features
+- Add Personal Details
+- Add Contact Information
+- Add Work and Educational Background
+- Download the CV
+- Responsive Design
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Built With
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,react)](https://skillicons.dev)
 
-## Expanding the ESLint configuration
+## Tools Used
+[![My Skills](https://skillicons.dev/icons?i=npm,git,cloudflare)](https://skillicons.dev)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Installation
+1. Clone the repository
+ 
+    ```bash
+    git clone git@github.com:NotRelix/cv-maker.git
+    ```
+2. Navigate to directory
+   
+    ```bash
+    cd cv-maker
+    ```
+3. Install dependencies
+   
+    ```bash
+    npm install
+    ```
+
+4. Run project
+   
+    ```bash
+    npm run dev
+    ```
