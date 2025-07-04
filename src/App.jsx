@@ -1,16 +1,25 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import UserCV from './components/UserCV'
 import UserDetails from './components/UserDetails'
 import { userInfoData } from './data/userInfoData'
-import html2pdf from 'html2pdf.js'
+import { jsPDF } from 'jspdf' 
+import html2canvas from 'html2canvas'
+import BasicInfo from './components/BasicInfo'
+import ContactInfo from './components/ContactInfo'
+import Education from './components/Education'
+import Work from './components/Work'
 
 function App() {
   const [userInfo, setUserInfo] = useState(userInfoData);
   const [toggleCV, setToggleCV] = useState(false);
 
-  const cvRef = useRef();
+  const doc = new jsPDF({
+    unit: 'pt',
+    format: 'letter',
+    orientation: 'portrait',
+  });
 
   function onChange(e, key) {
     setUserInfo({ ...userInfo, [key]: e.target.value })
@@ -20,18 +29,23 @@ function App() {
     setToggleCV(!toggleCV);
   }
 
-  function onClickDownload() {
-    const element = cvRef.current;
-    if (!element) return;
+  async function onClickDownload() {
+    const content = document.querySelector('#for-printing');
+    await html2canvas(content).then((canvas) => {
+      const componentWidth = content.offsetWidth;
+      const componentHeight = content.offsetHeight;
 
-    const options = {
-      filename: "my-cv.pdf",
-      image: { type: "pdf", quality: 1 },
-      html2canvas: { scale: 3 },
-      jsPDF: { unit: 'px', format: [510, 660], orientation: 'portrait' }
-    };
+      const imgData = canvas.toDataURL('image/png');
 
-    html2pdf().set(options).from(cvRef.current).save();
+      const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'px',
+        format: [componentWidth, componentHeight]
+      })
+
+      pdf.addImage(imgData, 'PNG', 0, 0, componentWidth, componentHeight);
+      pdf.save('my-cv.pdf');
+    })
   }
 
   return (
@@ -39,7 +53,7 @@ function App() {
       <Navbar onClickDownload={onClickDownload} />
       <main className='container__main'>
         <UserDetails userInfo={userInfo} onChange={onChange} setUserInfo={setUserInfo} />
-        <UserCV ref={cvRef} userInfo={userInfo} toggleCV={toggleCV} />
+        <UserCV userInfo={userInfo} toggleCV={toggleCV} />
       </main>
       <div className='eye-icon' onClick={handleToggleCV}>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
@@ -47,6 +61,21 @@ function App() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
         </svg>
       </div>
+
+
+      <div id='for-printing'>
+        <section className={`user-cv__container-print`}>
+          <section className="user-cv__top-section">
+            <BasicInfo userInfo={userInfo} />
+            <ContactInfo userInfo={userInfo} />
+          </section>
+          <section className='user-cv__middle-section'>
+            <Education userInfo={userInfo} />
+            <Work userInfo={userInfo} />
+          </section>
+        </section>
+      </div>
+
     </div>
   )
 }

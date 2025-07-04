@@ -1,11 +1,11 @@
-import { forwardRef, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../styles/UserCV.css';
 import BasicInfo from './BasicInfo';
 import ContactInfo from './ContactInfo';
 import Education from './Education';
 import Work from './Work';
 
-const UserCV = forwardRef(({ userInfo, toggleCV }, ref) => {
+const UserCV = ({ userInfo, toggleCV }) => {
   const [isMobile, setIsMobile] = useState(window.matchMedia('(max-width: 1000px)').matches);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const UserCV = forwardRef(({ userInfo, toggleCV }, ref) => {
     <>
       {toggleCV && isMobile && <div className='user-cv__backdrop' />}
 
-      <section ref={ref} className={`user-cv__container ${toggleCV === false ? "user-cv-hidden" : ""}`}>
+      <section className={`user-cv__container ${toggleCV === false ? "user-cv-hidden" : ""}`}>
         <section className="user-cv__top-section">
           <BasicInfo userInfo={userInfo} />
           <ContactInfo userInfo={userInfo} />
@@ -40,6 +40,6 @@ const UserCV = forwardRef(({ userInfo, toggleCV }, ref) => {
       </section>
     </>
   )
-});
+};
 
 export default UserCV;
